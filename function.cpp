@@ -52,7 +52,7 @@ function::function()
 			function_work = false;
 		}
 		else {
-			var = var + funcWorkTime;
+			//THINKING...............//....................//......................//
 		}
 	}
 }
