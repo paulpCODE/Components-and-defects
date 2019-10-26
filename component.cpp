@@ -8,7 +8,7 @@ using std::cout;
 typeComp component::Set_rand_type()//returns random type of comp
 {
 	srand(time(NULL));//srand dont works//Every run program randomize 2
-	int rand_num;
+	unsigned int rand_num;
 	rand_num = rand() % 3;
 	typeComp rand_type;
 	switch (rand_num) {

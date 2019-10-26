@@ -6,10 +6,9 @@ class defect
 {
 private:
 	typeDef _typeDef;
+	typeDef _Set_rand_typeDef();
 public:
-	bool existDefect(int timeWork, typeDef type);
 	typeDef Get_typeDef();
-	typeDef Set_rand_typeDef();
 	defect();
 	~defect();
 };
