@@ -5,28 +5,32 @@
 
 void function::funcChecking(function & temp)
 {
-	if (temp._existDef) {
-		srand(time(NULL));
-		int chance;
+	srand(time(NULL));
+	int chance;
+	temp.funcCheckingTimeSec = 0;
+	temp.funcVar = 0;
+	while (temp._existDef) {
+
+		temp.funcCheckingTimeSec++;
+
 		if (temp.typeFuncDefect == 0) {
 			chance = rand() % 53;
-			if ((chance > 35) && (chance < 46)) {
+			if ((chance > 35) && (chance < 41)) {
 				temp.sumFuncWorkTimeSec += 12;
+				temp.funcVar -= 24;
 				temp._existDef = false;
 				temp.function_work = true;
 			}
 		}
 		else if (temp.typeFuncDefect == 1) {
 			chance = rand() % 67;
-			if ((chance > 18) && (chance < 34)) {
+			if ((chance > 18) && (chance < 27)) {
 				temp.sumFuncWorkTimeSec += 8;
+				temp.funcVar -= 16;
 				temp._existDef = false;
 				temp.function_work = true;
 			}
 		}
-	}
-	else {
-		temp.function_work = true;
 	}
 }
 
@@ -62,6 +66,10 @@ bool function::existDef(int timeWork, typeDef type)
 				exist = true;
 			}
 		}
+		sumFuncWorkTimeSec++;
+		if (exist) {
+			return exist;
+		}
 	}
 	return exist;
 }
@@ -79,7 +87,7 @@ function::function()
 {
 	function_work = true;
 	_existDef = false;
-	funcVar = 0;
+	funcVar = sumFuncWorkTimeSec = funcCheckingTimeSec = 0;
 	typeFuncDefect = _funcDefect.Get_typeDef();
 	srand(time(NULL));
 	funcWorkTimeSec = rand() % 15 + 1;

@@ -22,19 +22,14 @@ typeComp component::_Set_rand_type()//returns random type of comp
 	return rand_type;
 }
 
-bool component::compCheking()
+void component::compCheking()
 {
 	function tmp;
 	for (auto i = funclist.begin(); i != funclist.end(); i++) {
 		tmp = *i;
-		tmp.function_work = false;
 		tmp.funcChecking(tmp);
-		if (!tmp.function_work) {
-			return false;
-		}
-		else {
-			return true;
-		}
+		sumCompWorkTimeSec += tmp.funcCheckingTimeSec;
+		compVar += tmp.funcVar;
 	}
 }
 
@@ -60,6 +55,7 @@ void component::compWorking()
 		else {
 			compVar += tmp.funcVar;
 		}
+		sumCompWorkTimeSec += tmp.sumFuncWorkTimeSec;
 	}
 }
 
