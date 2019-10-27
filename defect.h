@@ -1,6 +1,6 @@
 #pragma once
 
-enum typeDef {typeAlfa, typeBeta, typeGamma};
+enum typeDef {typeAlfa, typeBeta};
 
 class defect
 {

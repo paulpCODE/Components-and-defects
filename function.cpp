@@ -3,7 +3,48 @@
 #include <ctime>
 
 
-bool function::funcWorking(int timeWork, typeDef type)
+void function::funcChecking(function & temp)
+{
+	if (temp._existDef) {
+		srand(time(NULL));
+		int chance;
+		if (temp.typeFuncDefect == 0) {
+			chance = rand() % 53;
+			if ((chance > 35) && (chance < 46)) {
+				temp.sumFuncWorkTimeSec += 12;
+				temp._existDef = false;
+				temp.function_work = true;
+			}
+		}
+		else if (temp.typeFuncDefect == 1) {
+			chance = rand() % 67;
+			if ((chance > 18) && (chance < 34)) {
+				temp.sumFuncWorkTimeSec += 8;
+				temp._existDef = false;
+				temp.function_work = true;
+			}
+		}
+	}
+	else {
+		temp.function_work = true;
+	}
+}
+
+void function::funcWorking(function &temp)
+{
+	temp.funcVar = 0;
+	if (temp.function_work) {
+		temp._existDef = temp.existDef(temp.funcWorkTimeSec, temp.typeFuncDefect);
+		if (temp._existDef) {
+			temp.function_work = false;
+		}
+		else {
+			temp.funcVar += temp.funcWorkTimeSec;
+		}
+	}
+}
+
+bool function::existDef(int timeWork, typeDef type)
 {
 	bool exist = false;
 	srand(time(NULL));
@@ -16,45 +57,32 @@ bool function::funcWorking(int timeWork, typeDef type)
 			}
 		}
 		else if (type == 1) {
-			chance = rand() % 56;
-			if ((chance > 7) && (chance < 11)) {//5.3% to find a defect
-				exist = true;
-			}
-		}
-		else if (type == 2) {
 			chance = rand() % 68;
 			if ((chance > 11) && (chance < 16)) {//5.8% to find a defect
 				exist = true;
 			}
 		}
 	}
-	if (exist) {
-		return true;
-	}
-	else {
-		return false;
-	}
+	return exist;
+}
+
+function function::operator=(function alfa)
+{
+	_existDef = alfa._existDef;
+	function_work = alfa.function_work;
+	funcVar = alfa.funcVar;
+	funcWorkTimeSec = alfa.funcWorkTimeSec;
+	return *this;
 }
 
 function::function()
 {
-	bool existDef;
-	defect funcDefect;
-	typeDef typeFuncDefect = funcDefect.Get_typeDef();
-	do {
-		function_work = true;
-		srand(time(NULL));
-		funcWorkTime = rand() % 15 + 1;
-	} 
-	while (function_work); {
-		existDef = funcWorking(funcWorkTime, typeFuncDefect);
-		if (existDef) {
-			function_work = false;
-		}
-		else {
-			//THINKING...............//....................//......................//
-		}
-	}
+	function_work = true;
+	_existDef = false;
+	funcVar = 0;
+	typeFuncDefect = _funcDefect.Get_typeDef();
+	srand(time(NULL));
+	funcWorkTimeSec = rand() % 15 + 1;
 }
 
 

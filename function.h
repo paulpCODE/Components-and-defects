@@ -1,13 +1,21 @@
 #pragma once
 #include <iostream>
-#include "component.h"
 #include "defect.h"
-class function : public component, public defect
+class function : private defect
 {
+private:
+	bool _existDef;
+	defect _funcDefect;
 public:
-	bool funcWorking(int timeWork, typeDef type);
-	int funcWorkTime;
+	typeDef typeFuncDefect;
+	void funcChecking(function &temp);
+	void funcWorking(function &temp);
+	bool existDef(int timeWork, typeDef type);
+	int funcVar;
+	int funcWorkTimeSec;
+	int sumFuncWorkTimeSec;
 	bool function_work;
+	function operator = (function alfa);
 	function();
 	~function();
 };

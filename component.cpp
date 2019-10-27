@@ -1,13 +1,14 @@
 #include "pch.h"
 #include <iostream>
 #include "component.h"
+#include <list>
 #include <ctime>
 
-using std::cout;
+using std::list;
 
-typeComp component::Set_rand_type()//returns random type of comp
+typeComp component::_Set_rand_type()//returns random type of comp
 {
-	srand(time(NULL));//srand dont works//Every run program randomize 2
+	srand(time(NULL));
 	unsigned int rand_num;
 	rand_num = rand() % 3;
 	typeComp rand_type;
@@ -21,11 +22,59 @@ typeComp component::Set_rand_type()//returns random type of comp
 	return rand_type;
 }
 
+bool component::compCheking()
+{
+	function tmp;
+	for (auto i = funclist.begin(); i != funclist.end(); i++) {
+		tmp = *i;
+		tmp.function_work = false;
+		tmp.funcChecking(tmp);
+		if (!tmp.function_work) {
+			return false;
+		}
+		else {
+			return true;
+		}
+	}
+}
+
+void component::createFuncList()
+{
+	srand(time(NULL));
+	_num_of_functions = rand() % 4 + 3;
+	for (int i = 0; i < _num_of_functions; i++) {
+		function temp;
+		funclist.push_back(temp);
+	}
+}
+
+void component::compWorking()
+{
+	function tmp;
+	for (auto i = funclist.begin(); i != funclist.end(); i++) {
+		tmp = *i;
+		tmp.funcWorking(tmp);
+		if (tmp.funcVar == 0) {
+			comp_cheks = true;
+		}
+		else {
+			compVar += tmp.funcVar;
+		}
+	}
+}
+
+typeComp component::Get_type()
+{
+	return _typeComp;
+}
+
 component::component()
 {
-	var = 0;
-	_typeComp = Set_rand_type();
-	cout << _typeComp;
+	compVar = 0;
+	comp_cheks = false;
+	_typeComp = _Set_rand_type();
+	createFuncList();
+	compWorking();
 }
 
 

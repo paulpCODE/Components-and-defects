@@ -1,4 +1,10 @@
-﻿  function.cpp
+﻿  component.cpp
+c:\users\paulp\source\repos\modul1_2year\modul1_2year\component.cpp(11): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+c:\users\paulp\source\repos\modul1_2year\modul1_2year\component.cpp(43): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  function.cpp
 c:\users\paulp\source\repos\modul1_2year\modul1_2year\function.cpp(9): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-c:\users\paulp\source\repos\modul1_2year\modul1_2year\function.cpp(46): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+c:\users\paulp\source\repos\modul1_2year\modul1_2year\function.cpp(50): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+c:\users\paulp\source\repos\modul1_2year\modul1_2year\function.cpp(84): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Создание кода...
+c:\users\paulp\source\repos\modul1_2year\modul1_2year\component.cpp(39): warning C4715: component::compCheking: значение возвращается не при всех путях выполнения
   Modul1_2year.vcxproj -> C:\Users\paulp\source\repos\Modul1_2year\Debug\Modul1_2year.exe

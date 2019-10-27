@@ -12,12 +12,11 @@ typeDef defect::_Set_rand_typeDef()
 {
 	srand(time(NULL));
 	int rand_num;
-	rand_num = rand() % 3;
+	rand_num = rand() % 2;
 	typeDef type;
 	switch (rand_num) {
 	case 0: type = typeAlfa; break;
 	case 1: type = typeBeta; break;
-	case 2: type = typeGamma; break;
 	default:
 		break;
 	}
@@ -26,6 +25,7 @@ typeDef defect::_Set_rand_typeDef()
 
 defect::defect()
 {
+	_typeDef = _Set_rand_typeDef();
 }
 
 
