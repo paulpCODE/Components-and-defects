@@ -20,7 +20,7 @@ void System::SystemWorking()
 	while (SystemWorkTimeSec < _SystemWorkSec) {
 		for (auto i = _complist.begin(); i != _complist.end(); i++) {
 			if (i._Ptr->_Myval.comp_checks) {
-				i._Ptr->_Myval.compCheking();
+				i._Ptr->_Myval.compChecking();
 			}
 			else {
 				i._Ptr->_Myval.compWorking();

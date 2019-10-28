@@ -6,7 +6,7 @@
 using std::cout;
 using std::list;
 
-typeComp component::_Set_rand_type()//returns random type of comp
+typeComp component::_Set_rand_type()
 {
 	unsigned int rand_num;
 	rand_num = rand() % 3;
@@ -21,19 +21,19 @@ typeComp component::_Set_rand_type()//returns random type of comp
 	return rand_type;
 }
 
-void component::compCheking()
+void component::compChecking()
 {
-	for (auto i = _funclist.begin(); i != _funclist.end(); i++) {
-		if (!i._Ptr->_Myval.function_work) {
+	for (auto i = _funclist.begin(); i != _funclist.end(); i++) { //While the list not over
+		if (!i._Ptr->_Myval.function_work) { // if function dont works
 			i._Ptr->_Myval.funcChecking(*i);
 			CompWorkTimeSec += i._Ptr->_Myval.sumFuncWorkTimeSec;
-			if (_typeComp == 0) {
+			if (_typeComp == 0) { //if component's type is typeA
 				compVar += i._Ptr->_Myval.funcVar + 4;
 			}
-			else if (_typeComp == 1) {
+			else if (_typeComp == 1) { //if component's type is typeB
 				compVar += i._Ptr->_Myval.funcVar;
 			}
-			else {
+			else { //else component's type is typeC
 				compVar += i._Ptr->_Myval.funcVar - 4;
 			}
 		}
@@ -56,10 +56,10 @@ void component::_createFuncList()
 
 void component::compWorking()
 {
-	for (auto i = _funclist.begin(); i != _funclist.end(); i++) {
+	for (auto i = _funclist.begin(); i != _funclist.end(); i++) { //While the list not over
 		
 		i._Ptr->_Myval.funcWorking(*i);
-		if (!i._Ptr->_Myval.function_work) {
+		if (!i._Ptr->_Myval.function_work) { // if function don't works then comoponent stops and checks. Else cost of function plus to cost of component
 			comp_checks = true;
 		}
 		else {
@@ -74,18 +74,6 @@ void component::compGeneration()
 {
 	_typeComp = _Set_rand_type();
 	_createFuncList();
-}
-/*
-void component::printCompFuncList()
-{
-	for (auto i = _funclist.begin(); i != _funclist.end(); i++) {
-		cout << "\nType: " << i._Ptr->_Myval.typeFuncDefect;
-	}
-}
-*/
-typeComp component::Get_type()
-{
-	return _typeComp;
 }
 
 component::component()
