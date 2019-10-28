@@ -13,6 +13,7 @@ public:
 	typeDef typeFuncDefect; // type of defect which can detects in function
 	// if component dont works then all functions cheks.
 	void funcChecking(function &temp);
+	//function work
 	void funcWorking(function &temp);
 	// Generate random function
 	void funcGeneration();

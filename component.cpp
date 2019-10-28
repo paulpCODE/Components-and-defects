@@ -29,12 +29,15 @@ void component::compChecking()
 			CompWorkTimeSec += i._Ptr->_Myval.sumFuncWorkTimeSec;
 			if (_typeComp == 0) { //if component's type is typeA
 				compVar += i._Ptr->_Myval.funcVar + 4;
+				compVarDefectDelete += compVar * -1;
 			}
 			else if (_typeComp == 1) { //if component's type is typeB
 				compVar += i._Ptr->_Myval.funcVar;
+				compVarDefectDelete += compVar * -1;
 			}
 			else { //else component's type is typeC
 				compVar += i._Ptr->_Myval.funcVar - 4;
+				compVarDefectDelete += compVar * -1;
 			}
 		}
 		i._Ptr->_Myval.sumFuncWorkTimeSec = 0;
@@ -78,7 +81,7 @@ void component::compGeneration()
 
 component::component()
 {
-	compVar = CompWorkTimeSec = 0;
+	compVar = CompWorkTimeSec = compVarDefectDelete = 0;
 	comp_checks = false;
 }
 

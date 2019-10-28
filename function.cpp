@@ -12,7 +12,7 @@ void function::funcChecking(function & temp)
 
 		if (temp.typeFuncDefect == 0) {
 			chance = rand() % 53;
-			if ((chance > 35) && (chance < 46)) {
+			if ((chance > 35) && (chance < 46)) {// 18% to find a defect
 				temp.sumFuncWorkTimeSec += 8;
 				temp.funcVar -= 12;
 				temp._existDef = false;
@@ -21,7 +21,7 @@ void function::funcChecking(function & temp)
 		}
 		else if (temp.typeFuncDefect == 1) {
 			chance = rand() % 67;
-			if ((chance > 18) && (chance < 32)) {
+			if ((chance > 18) && (chance < 32)) {// 22% to find a defect
 				temp.sumFuncWorkTimeSec += 4;
 				temp.funcVar -= 8;
 				temp._existDef = false;
@@ -58,14 +58,14 @@ bool function::_chanceDef(int timeWork, typeDef type)
 	int chance;
 	for (int i = 0; i < timeWork; i++) {
 		if (type == 0) {
-			chance = rand() % 44;
-			if ((chance > 4) && (chance < 7)) {//4.5% to find a defect
+			chance = rand() % 53;
+			if ((chance > 5) && (chance < 7)) {//1.8% to emersion a defect
 				existDef = true;
 			}
 		}
 		else if (type == 1) {
-			chance = rand() % 68;
-			if ((chance > 11) && (chance < 16)) {//5.8% to find a defect
+			chance = rand() % 72;
+			if ((chance > 13) && (chance < 16)) {//2.7% to emersion a defect
 				existDef = true;
 			}
 		}

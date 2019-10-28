@@ -17,6 +17,7 @@ private:
 	void _createFuncList();
 public:
 	int compVar; //cost of component (updates after each cycle)
+	int compVarDefectDelete; // cost of component which was spent on deleting defects
 	int CompWorkTimeSec; // time of component's work (updates after each cycle)
 	bool comp_checks;
 	// if function detects a defect, component stops and checks
