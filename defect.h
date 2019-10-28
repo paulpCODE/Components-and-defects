@@ -4,10 +4,10 @@ enum typeDef {typeAlfa, typeBeta};
 
 class defect
 {
-private:
+protected:
 	typeDef _typeDef;
-	typeDef _Set_rand_typeDef();
 public:
+	typeDef _Set_rand_typeDef();
 	typeDef Get_typeDef();
 	defect();
 	~defect();

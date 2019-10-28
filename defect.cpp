@@ -1,6 +1,7 @@
 #include "pch.h"
 #include <iostream>
 #include <ctime>
+#include <random>
 #include "defect.h"
 
 typeDef defect::Get_typeDef()
@@ -10,7 +11,6 @@ typeDef defect::Get_typeDef()
 
 typeDef defect::_Set_rand_typeDef()
 {
-	srand(time(NULL));
 	int rand_num;
 	rand_num = rand() % 2;
 	typeDef type;

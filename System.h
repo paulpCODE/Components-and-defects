@@ -1,10 +1,12 @@
 #pragma once
+#include <iostream>
 #include "function.h"
 #include"component.h"
 
-class System : public component, public function
+class System
 {
 private:
+	int _SystemVar;
 	int _SystemWorkSec;
 	typeComp _typeComp1;
 	//typeComp _typeComp2;

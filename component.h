@@ -1,6 +1,6 @@
 #pragma once
 #include"function.h"
-#include<list>
+#include <list>
 enum typeComp {typeA, typeB, typeC};
 
 class component
@@ -8,16 +8,15 @@ class component
 private:
 	typeComp _typeComp;
 	typeComp _Set_rand_type();
-	int _num_of_functions;
-protected:
-	std::list<function> funclist;
-	void createFuncList();
-	int compVar;//Стоимость компонента
+	std::list<function> _funclist;
+	void _createFuncList();
 public:
-	bool comp_cheks;
-	int sumCompWorkTimeSec;
+	int compVar;//Стоимость компонента
+	int CompWorkTimeSec;
+	bool comp_checks;
 	void compCheking();
 	void compWorking();
+	//void printCompFuncList();
 	typeComp Get_type();
 	component();
 	~component();
