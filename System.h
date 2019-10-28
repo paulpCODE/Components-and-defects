@@ -2,20 +2,17 @@
 #include <iostream>
 #include "function.h"
 #include"component.h"
+#include <list>
 
 class System
 {
 private:
 	int _SystemVar;
 	int _SystemWorkSec;
-	typeComp _typeComp1;
-	//typeComp _typeComp2;
-	//typeComp _typeComp3;
+	std::list<component> _complist;
+	void _createCompList();
 public:
 	void SystemWorking();
-	component comp1;
-	//component comp2;
-	//component comp3;
 	System();
 	~System();
 };

@@ -3,31 +3,42 @@
 
 
 
+void System::_createCompList()
+{
+	component temp;
+	int numOfComp;
+	numOfComp = rand() % 3 + 3;
+	for (int i = 0; i < numOfComp; i++) {
+		temp.compGeneration();
+		_complist.push_back(temp);
+	}
+}
+
 void System::SystemWorking()
 {
-	int sumCompWorkTimeSec = 0;
-	while (sumCompWorkTimeSec < _SystemWorkSec) {
-		if (comp1.comp_checks) {
-			comp1.compCheking();
+	int SystemWorkTimeSec = 0;
+	while (SystemWorkTimeSec < _SystemWorkSec) {
+		for (auto i = _complist.begin(); i != _complist.end(); i++) {
+			if (i._Ptr->_Myval.comp_checks) {
+				i._Ptr->_Myval.compCheking();
+			}
+			else {
+				i._Ptr->_Myval.compWorking();
+			}
+			SystemWorkTimeSec += i._Ptr->_Myval.CompWorkTimeSec;
+			_SystemVar += i._Ptr->_Myval.compVar;
+			i._Ptr->_Myval.CompWorkTimeSec = 0;
+			i._Ptr->_Myval.compVar = 0;
 		}
-		else {
-			comp1.compWorking();
-		}
-		sumCompWorkTimeSec += comp1.CompWorkTimeSec;
-		_SystemVar += comp1.compVar;
-		comp1.CompWorkTimeSec = 0;
-		comp1.compVar = 0;
 	}
 	std::cout << _SystemVar;
 }
 
 System::System()
 {
-	_SystemWorkSec = 1000;
+	_SystemWorkSec = 5000;
 	_SystemVar = 0;
-	_typeComp1 = comp1.Get_type();
-	//_typeComp2 = comp2.Get_type();
-	//_typeComp3 = comp3.Get_type();
+	_createCompList();
 }
 
 

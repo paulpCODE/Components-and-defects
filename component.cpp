@@ -70,6 +70,11 @@ void component::compWorking()
 		i._Ptr->_Myval.funcVar = 0;
 	}
 }
+void component::compGeneration()
+{
+	_typeComp = _Set_rand_type();
+	_createFuncList();
+}
 /*
 void component::printCompFuncList()
 {
@@ -87,8 +92,6 @@ component::component()
 {
 	compVar = CompWorkTimeSec = 0;
 	comp_checks = false;
-	_typeComp = _Set_rand_type();
-	_createFuncList();
 }
 
 

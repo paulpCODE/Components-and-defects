@@ -16,6 +16,7 @@ public:
 	bool comp_checks;
 	void compCheking();
 	void compWorking();
+	void compGeneration();
 	//void printCompFuncList();
 	typeComp Get_type();
 	component();
