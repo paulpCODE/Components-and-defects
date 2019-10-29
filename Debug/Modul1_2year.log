@@ -1,2 +1,8 @@
-﻿  System.cpp
+﻿  Modul1_2year.cpp
+c:\users\paulp\source\repos\modul1_2year\modul1_2year\modul1_2year.cpp(8): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  System.cpp
+  component.cpp
+  defect.cpp
+  function.cpp
+  Создание кода...
   Modul1_2year.vcxproj -> C:\Users\paulp\source\repos\Modul1_2year\Debug\Modul1_2year.exe

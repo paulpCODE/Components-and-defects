@@ -1,7 +1,5 @@
 #include "pch.h"
 #include <iostream>
-#include <ctime>
-#include <random>
 #include "defect.h"
 
 typeDef defect::Get_typeDef()

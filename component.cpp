@@ -1,7 +1,5 @@
 #include "pch.h"
-#include <iostream>
 #include "component.h"
-#include <ctime>
 
 using std::cout;
 using std::list;

@@ -1,7 +1,6 @@
 #pragma once
 #include <iostream>
-#include "function.h"
-#include"component.h"
+#include "component.h"
 #include <list>
 
 class System

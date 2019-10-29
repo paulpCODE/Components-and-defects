@@ -1,6 +1,5 @@
 #include "pch.h"
 #include "function.h"
-#include <ctime>
 
 
 void function::funcChecking(function & temp)
@@ -76,24 +75,12 @@ bool function::_chanceDef(int timeWork, typeDef type)
 	}
 	return existDef;
 }
-/**
-function function::operator=(function alfa)
-{
-	_existDef = alfa._existDef;
-	function_work = alfa.function_work;
-	funcVar = alfa.funcVar;
-	funcWorkTimeSec = alfa.funcWorkTimeSec;
-	return *this;
-}
-*/
+
 function::function()
 {
 	function_work = true;
 	_existDef = false;
 	funcVar = sumFuncWorkTimeSec = 0;
-	//typeFuncDefect = _funcDefect.Get_typeDef();
-	//srand(time(NULL));
-	//_funcWorkTimeSec = rand() % 15 + 1;
 }
 
 

@@ -1,5 +1,6 @@
 #pragma once
-#include"function.h"
+#include <iostream>
+#include "function.h"
 #include <list>
 
 //types of components

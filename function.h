@@ -20,7 +20,6 @@ public:
 	int funcVar; // function's cost (updates after each cycle)
 	int sumFuncWorkTimeSec; // sum of function's work and check time in seconds (updates after each cycle)
 	bool function_work;
-//	function operator = (function alfa);
 	function();
 	~function();
 };
